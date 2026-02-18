@@ -1,4 +1,5 @@
 mod pick_color;
+mod db;
 
 use rand::{RngExt};
 use crate::pick_color::pick;
@@ -11,6 +12,8 @@ fn main() {
     let rand_el = rng.random_range(0..3);
 
     let el = color[rand_el];
+
+    let _ = db::get_client(el);
 
     pick(el, rand_el.to_string().parse().unwrap());
 
