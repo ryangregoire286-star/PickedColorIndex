@@ -6,10 +6,17 @@ use crate::pick_color::pick;
 
 fn main() {
 
-    let color: [&str; 3] = ["red", "green", "blue"];
+    
+    const LENGTH: i32 = 3usize as i32;
+    const X: usize = 0;
+    const Y: usize = 3;
+
+    let (x, y) = (X, Y);
+
+    let color: [&str; LENGTH as usize] = ["red", "green", "blue"];
 
     let mut rng = rand::rng();
-    let rand_el = rng.random_range(0..3);
+    let rand_el = rng.random_range(x..y);
 
     let el = color[rand_el];
 
