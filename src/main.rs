@@ -2,6 +2,7 @@ mod pick_color;
 mod db;
 
 use rand::{RngExt};
+use crate::db::{Type};
 use crate::pick_color::pick;
 
 fn main() {
@@ -20,7 +21,7 @@ fn main() {
 
     let el = color[rand_el];
 
-    let _ = db::get_client(el);
+    let _ = db::DBType::get_client(el);
 
     pick(el, rand_el.to_string().parse().unwrap());
 
